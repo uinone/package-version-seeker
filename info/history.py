@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 
 from datetime import datetime
 
+from typing import Optional
+
 class ReleaseHistory:
     def __init__(self, project_name:str, release_history:dict):
         self.project_name = project_name
@@ -21,7 +23,7 @@ class ReleaseHistory:
         
         return f"{self.project_name}=={closest_version}"
     
-    def get_datetime_by_version(self, version:str) -> datetime | None:
+    def get_datetime_by_version(self, version:str) -> Optional[datetime]:
         try:
             dt = self.version_to_datetime[version]
             return dt
