@@ -1,5 +1,5 @@
 import argparse
-from info import RequiredModules
+from .info import RequiredModules
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Get required modules safe versions!")
@@ -32,6 +32,3 @@ def main():
         print("="*info_width)
         print(req_modules)
         print("="*info_width)
-
-if __name__ == "__main__":
-    main()
