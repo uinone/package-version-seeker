@@ -27,6 +27,7 @@ class ReleaseHistory:
             return dt
         except KeyError:
             print(f"version '{version}' does not exist in {self.project_name}'s release history\nCheck 'https://pypi.org/project/{self.project_name}/#history'")
+            return None
 
     def __repr__(self) -> str:
         return f"[Project] {self.project_name}"
