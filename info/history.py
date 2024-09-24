@@ -16,12 +16,15 @@ class ReleaseHistory:
         minimum_diff = -1
         closest_version = None
         for k,v in self.version_to_datetime.items():
-            diff = abs(v["datetime"].timestamp() - target_timestamp)
+            diff = target_timestamp - v["datetime"].timestamp()
+            if diff < 0:
+                continue
             if (closest_version is None) or (diff < minimum_diff):
                 minimum_diff = diff
                 closest_version = k
+                break
         
-        return f">={closest_version}"
+        return f"=={closest_version}"
     
     def get_datetime_by_version(self, version:str) -> Optional[datetime]:
         try:
