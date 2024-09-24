@@ -21,7 +21,7 @@ class ReleaseHistory:
                 minimum_diff = diff
                 closest_version = k
         
-        return f"{self.project_name}=={closest_version}"
+        return closest_version
     
     def get_datetime_by_version(self, version:str) -> Optional[datetime]:
         try:
