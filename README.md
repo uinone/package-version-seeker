@@ -1,4 +1,4 @@
-# version-finder
+# pakage-version-seeker
 
 옛날 버전의 패키지를 설치할때, requirement.txt를 보면 버전이 명시되지 않은 경우가 있습니다.
 
@@ -36,13 +36,13 @@ trimesh>=2.35.39,<2.35.40
 
 다음과 같이 version-finder를 설치해주세요
 ```python
-pip install version-finder
+pip install pakage-version-seeker
 ```
 
 이후 다음과 같이 실행합니다.
 
 ```python
-vf mmdet3d 0.17.1 ./mmdetection3d/requirements/runtime.txt
+pvs mmdet3d 0.17.1 ./mmdetection3d/requirements/runtime.txt
 ```
 
 실행 결과는 다음과 같습니다.
@@ -65,5 +65,5 @@ trimesh>=2.35.39,<2.35.40
 특정 파일로 결과를 작성하고싶은 경우, 다음과 같이 '--export-path'를 명시해주세요.
 
 ```python
-vf mmdet3d 0.17.1 ./mmdetection3d/requirements/runtime.txt --export-path ./new_requirement.txt
+pvs mmdet3d 0.17.1 ./mmdetection3d/requirements/runtime.txt --export-path ./new_requirement.txt
 ```

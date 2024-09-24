@@ -1,18 +1,18 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='version-finder',
+    name='pakage-version-seeker',
     version='1.0.0',
     description='Find unspecified pakages verison!!',
     author='uinone',
     author_email='tizm423@gmail.com',
-    url='https://github.com/uinone/version-finder',
+    url='https://github.com/uinone/pakage-version-seeker',
     packages=find_packages(exclude=[]),
     include_package_data=True,
     keywords=[],
     python_requires='>=3.8',
     package_data={},
-    entry_points={'console_scripts': ["vf=src:main"]},
+    entry_points={'console_scripts': ["pvs=src:main"]},
     zip_safe=False,
     classifiers=[
         'Programming Language :: Python :: 3.8',
