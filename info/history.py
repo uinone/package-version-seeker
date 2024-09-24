@@ -8,7 +8,7 @@ class ReleaseHistory:
         self.project_name = project_name
         self.version_to_datetime = release_history
 
-    def get_closest_version_by_datetime(self, target_datetime: datetime):
+    def get_closest_version_by_datetime(self, target_datetime: datetime) -> str:
         target_timestamp = target_datetime.timestamp()
 
         minimum_diff = -1
@@ -21,7 +21,7 @@ class ReleaseHistory:
         
         return f"{self.project_name}=={closest_version}"
     
-    def get_datetime_by_version(self, version:str):
+    def get_datetime_by_version(self, version:str) -> datetime | None:
         try:
             dt = self.version_to_datetime[version]
             return dt
