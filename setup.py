@@ -1,13 +1,20 @@
 from setuptools import setup, find_packages
 
+def readme():
+    with open('README.md', encoding='utf-8') as f:
+        content = f.read()
+    return content
+
 setup(
     name='pakage-version-seeker',
-    version='1.0.0',
+    version='1.0.1',
     description='Find unspecified pakages verison!!',
+    long_description=readme(),
+    long_description_content_type='text/markdown',
     author='uinone',
     author_email='tizm423@gmail.com',
-    url='https://github.com/uinone/pakage-version-seeker',
-    packages=find_packages(exclude=[]),
+    url='https://github.com/uinone/package-version-seeker',
+    packages=find_packages(),
     include_package_data=True,
     keywords=[],
     python_requires='>=3.8',

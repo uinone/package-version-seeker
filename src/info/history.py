@@ -24,6 +24,11 @@ class ReleaseHistory:
                 closest_version = k
                 break
         
+        # See https://github.com/uinone/package-version-seeker/issues/1
+        if closest_version is None:
+            versions = list(self.version_to_datetime.keys())
+            closest_version = versions[-1] # Get oldest version
+
         return f"=={closest_version}"
     
     def get_datetime_by_version(self, version:str) -> Optional[datetime]:
