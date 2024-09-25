@@ -34,10 +34,15 @@ trimesh>=2.35.39,<2.35.40
 
 보시다시피, 몇가지 패키지는 버전 명시가 되어있지 않습니다.
 
-다음과 같이 pakage-version-seeker를 설치해주세요
+다음과 같이 `pakage-version-seeker`를 설치해주세요
 ```python
 pip install pakage-version-seeker
 ```
+
+>[!warning] \
+>이름이 `pakage`로 시작하는 것은 오타가 아닙니다. \
+>\
+>패키지를 배포할때, 제가 실수해서 그렇습니다.
 
 이후 다음과 같이 실행합니다.
 
@@ -48,8 +53,15 @@ pvs mmdet3d 0.17.1 ./mmdetection3d/requirements/runtime.txt
 실행 결과는 다음과 같습니다.
 
 ```python
-[OUTPUT]
-===========================
+[SUCCESS]
+======================================================================================
+Export pretty requirement.txt to 'mmdetection3d/requirements/runtime.txt' successfully  
+======================================================================================
+```
+
+파일은 다음과 같이 변경됩니다.
+
+```python
 lyft_dataset_sdk==0.0.8
 networkx>=2.2,<2.3
 numba==0.48.0
@@ -59,10 +71,19 @@ plyfile==0.7.4
 scikit-image==0.18.3
 tensorboard==2.6.0
 trimesh>=2.35.39,<2.35.40
-===========================
 ```
 
-특정 파일로 결과를 작성하고싶은 경우, 다음과 같이 '--export-path'를 명시해주세요.
+>[!warning] \
+>기본적인 동작은 req_path에 존재하는 requirement.txt를 수정하는 것입니다. \
+>만약 단순하게 output만 확인하는 경우, 다음과 같이 `--show-output` 인자를 같이 작성해주세요.
+
+```python
+pvs mmdet3d 0.17.1 ./mmdetection3d/requirements/runtime.txt --show-output
+```
+
+### If the desired path exists
+
+특정 파일로 결과를 작성하고싶은 경우, 다음과 같이 `--export-path`를 명시해주세요.
 
 ```python
 pvs mmdet3d 0.17.1 ./mmdetection3d/requirements/runtime.txt --export-path ./new_requirement.txt
