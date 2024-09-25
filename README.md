@@ -1,4 +1,4 @@
-# pakage-version-seeker
+# package-version-seeker
 
 옛날 버전의 패키지를 설치할때, requirement.txt를 보면 버전이 명시되지 않은 경우가 있습니다.
 
@@ -6,9 +6,9 @@
 
 1. 매번 패키지가 만들어진 날짜를 찾고
 2. 찾은 날짜랑 가장 비슷한 날짜에 만들어진 버전을 다시 찾아서
-3. requirement.txt를 수정하던 저는 귀찮아졌습니다.
+3. requirement.txt를 수정해야합니다.
 
-그래서 준비했습니다.
+위 과정은 굉장히 귀찮은 작업입니다.
 
 ## How to use
 
@@ -34,7 +34,7 @@ trimesh>=2.35.39,<2.35.40
 
 보시다시피, 몇가지 패키지는 버전 명시가 되어있지 않습니다.
 
-다음과 같이 version-finder를 설치해주세요
+다음과 같이 pakage-version-seeker를 설치해주세요
 ```python
 pip install pakage-version-seeker
 ```
