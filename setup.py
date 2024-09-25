@@ -7,7 +7,7 @@ def readme():
 
 setup(
     name='pakage-version-seeker',
-    version='1.0.1',
+    version='1.0.2',
     description='Find unspecified pakages verison!!',
     long_description=readme(),
     long_description_content_type='text/markdown',
