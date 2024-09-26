@@ -67,9 +67,9 @@ class RequiredModules:
                             break
 
                     if postive_index == -1:
-                        required_module_infos[module_name] = None
+                        required_module_infos[str(module_name).strip()] = None
                     else:
-                        required_module_infos[module_name[:postive_index]] = module_name[postive_index:]
+                        required_module_infos[str(module_name[:postive_index]).strip()] = module_name[postive_index:]
             
             return RequiredModules(infos=required_module_infos)._fill_empty_versions(target_project, target_project_version)
         except Exception as e:
