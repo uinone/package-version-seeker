@@ -39,7 +39,7 @@ trimesh>=2.35.39,<2.35.40
 pip install pakage-version-seeker
 ```
 
->[!warning] \
+>[!CAUTION]
 >이름이 `pakage`로 시작하는 것은 오타가 아닙니다. \
 >\
 >패키지를 배포할때, 제가 실수해서 그렇습니다.
@@ -73,7 +73,7 @@ tensorboard==2.6.0
 trimesh>=2.35.39,<2.35.40
 ```
 
->[!warning] \
+>[!NOTE]
 >기본적인 동작은 req_path에 존재하는 requirement.txt를 수정하는 것입니다. \
 >만약 단순하게 output만 확인하는 경우, 다음과 같이 `--show-output` 인자를 같이 작성해주세요.
 
