@@ -49,6 +49,9 @@ class ReleaseHistory:
         release_history_response = requests.get(release_history_url)
         soup = BeautifulSoup(release_history_response.text, "html.parser")
 
+        if soup.find(name="title").contents[0].find("404") != -1:
+            raise Exception(f"It seems [{project_name}] is not a valid project name in pypi.\nCheck this url {release_history_url}")
+
         time_line = soup.find(name="div", attrs="release-timeline")
         
         releases = time_line.findAll(name="div", attrs="release")
