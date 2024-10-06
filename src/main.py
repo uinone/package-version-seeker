@@ -20,6 +20,9 @@ def main():
         target_project_version=args.project_version
     )
 
+    if req_modules is None:
+        return
+
     if args.show_output == False:
         args.export_path = args.export_path if args.export_path is not None else args.req_path
 
