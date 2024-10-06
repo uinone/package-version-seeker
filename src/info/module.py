@@ -15,6 +15,19 @@ class Module:
         self.comment = comment
         self.module_type = module_type
     
+    def __repr__(self) -> str:
+        if self.module_type == ModuleType.NEWLINE:
+            return "\n"
+
+        if self.module_type == ModuleType.JUST_COMMENT:
+            return self.comment
+
+        repr_text = self.project_name + self.project_version if self.project_version is not None else ""
+        if self.module_type.name.endswith("WITH_COMMENT"):
+            repr_text += self.comment
+        
+        return repr_text
+    
     @classmethod
     def parse_content(cls, content:str):
         if len(content) == 0:
