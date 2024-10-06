@@ -1,12 +1,12 @@
 from enum import Enum
 
 class ModuleType(Enum):
+    NEWLINE = 0
     VERSION_EXIST = 1
     VERSION_EMPTY = 2
     JUST_COMMENT = 3
     VERSION_EXIST_WITH_COMMENT = 4
     VERSION_EMPTY_WITH_COMMENT = 5
-    NEWLINE = 6
 
 class Module:
     def __init__(self, project_name:str, project_version:str, comment:str, module_type:ModuleType):
