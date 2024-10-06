@@ -11,7 +11,6 @@ class RequiredModules:
         repr_text = ""
 
         for info in self.infos:
-            print(info.__repr__())
             repr_text += info.__repr__() + "\n"
         
         return repr_text[:-1]
